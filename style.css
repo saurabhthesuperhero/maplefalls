@@ -1,0 +1,95 @@
+/* Maple Falls: Murder Mystery — site (GitHub Pages). Dark noir, case-file accents. */
+:root {
+  --ink: #0b0f16;
+  --ink-2: #111824;
+  --panel: #161e2b;
+  --line: #2a3446;
+  --cream: #f3e6cc;
+  --text: #d9d2c3;
+  --dim: #9aa3b2;
+  --amber: #e2b262;
+  --red: #c4262c;
+  --teal: #2f6f78;
+  --radius: 14px;
+  --max: 1080px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font: 17px/1.65 "Libre Baskerville", Georgia, "Times New Roman", serif;
+}
+a { color: var(--amber); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--cream); }
+img { max-width: 100%; display: block; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+.display { font-family: "Bebas Neue", Impact, sans-serif; letter-spacing: 0.06em; font-weight: 400; color: var(--cream); }
+.type { font-family: "Special Elite", "Courier New", monospace; }
+
+/* top bar */
+.bar { position: sticky; top: 0; z-index: 5; background: rgba(11, 15, 22, 0.86); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 60px; }
+.bar a.home { display: flex; align-items: center; gap: 10px; color: var(--cream); text-decoration: none; }
+.bar img { width: 34px; height: 34px; border-radius: 8px; }
+.bar nav { display: flex; gap: 18px; font-size: 14px; }
+.bar nav a { color: var(--dim); text-decoration: none; }
+.bar nav a:hover, .bar nav a[aria-current] { color: var(--cream); }
+
+/* hero */
+.hero { position: relative; min-height: min(86vh, 760px); display: flex; align-items: flex-end; overflow: hidden;
+  background: #05080d url("img/hero.jpg") center 30% / cover no-repeat; }
+.hero::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(5, 8, 13, 0.15) 0%, rgba(5, 8, 13, 0.25) 45%, var(--ink) 100%),
+              linear-gradient(90deg, rgba(5, 8, 13, 0.75) 0%, rgba(5, 8, 13, 0) 60%); }
+.hero .wrap { position: relative; z-index: 1; padding-bottom: 56px; width: 100%; }
+.hero .logo { width: min(520px, 88%); filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.7)); }
+.hero .tag { font-size: clamp(18px, 2.4vw, 24px); color: var(--cream); max-width: 560px; margin: 18px 0 26px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8); }
+.cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px;
+  background: var(--red); color: #fff; text-decoration: none; font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 22px; letter-spacing: 0.08em; box-shadow: 0 10px 30px rgba(196, 38, 44, 0.35); }
+.cta:hover { background: #d8333a; color: #fff; }
+.cta small { font-family: "Special Elite", monospace; font-size: 13px; letter-spacing: 0; opacity: 0.85; }
+
+/* sections */
+section { padding: 64px 0; }
+h2 { font-size: clamp(34px, 5vw, 52px); margin: 0 0 8px; line-height: 1; }
+.kicker { color: var(--amber); font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; margin: 0 0 10px; }
+.lede { color: var(--dim); max-width: 680px; margin: 0 0 32px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.card { background: linear-gradient(180deg, var(--panel), var(--ink-2)); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 22px; position: relative; }
+.card::before { content: ""; position: absolute; left: 22px; top: 0; width: 56px; height: 4px; background: var(--red); }
+.card h3 { margin: 6px 0 6px; font-size: 26px; }
+.card p { margin: 0; color: var(--dim); font-size: 15px; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.shots img { border-radius: 10px; border: 1px solid var(--line); }
+.stats { display: flex; flex-wrap: wrap; gap: 28px; margin: 28px 0 0; }
+.stats div { min-width: 120px; }
+.stats b { display: block; font-family: "Bebas Neue", Impact, sans-serif; font-size: 48px; color: var(--cream);
+  line-height: 1; letter-spacing: 0.04em; }
+.stats span { color: var(--dim); font-size: 14px; }
+
+/* legal pages */
+.doc { max-width: 760px; margin: 0 auto; padding: 48px 16px 80px; }
+.doc h1 { font-size: clamp(40px, 7vw, 64px); line-height: 1; margin: 0 0 6px; }
+.doc .meta { color: var(--dim); font-size: 14px; margin: 0 0 28px; }
+.doc h2 { font-size: 30px; margin: 36px 0 8px; }
+.doc p, .doc li { color: var(--text); }
+.doc ul { padding-left: 20px; }
+.doc .short { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--red);
+  border-radius: 10px; padding: 14px 20px; }
+
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--dim); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 24px; justify-content: space-between; }
+footer a { color: var(--dim); }
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .bar nav { gap: 12px; font-size: 13px; }
+  .hero { min-height: 78vh; }
+  section { padding: 44px 0; }
+}
